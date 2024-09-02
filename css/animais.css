@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 200px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    background-color: #fff;
+    transition: .5s;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.logo {
+    font-size: 32px;
+    color: #ff9100;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 25%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.carrossel {
+    filter: drop-shadow(0px 0px 10px #000);
+    overflow: hidden;
+    width: 1250px; /* Largura do carrossel */
+    height: 570px; /* Altura do carrossel */
+}
+
+.container {
+    display: flex;
+    transition: 0.7s ease-in-out;
+    transform: translateX(0);
+    height: 100%; /* Garante que a altura do contêiner seja 100% da altura do carrossel */
+}
+
+img {
+    width: 1250px; /* Largura fixa para cada imagem */
+    height: 100%; /* A altura da imagem será ajustada para a altura do contêiner */
+    object-fit: cover; /* Garante que a imagem cubra toda a área do carrossel sem distorção */
+    flex-shrink: 0; /* Impede que as imagens encolham */
+}
+
